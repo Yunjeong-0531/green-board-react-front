@@ -1,0 +1,245 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0px;
+    background:#b4d3a93f;
+    color:#243b2d;
+    line-height: 1.7;
+
+}
+
+header, main, footer{
+    width:92%;
+    max-width: 900px;
+    margin : 0 auto;
+    padding: 24px;
+}
+
+main{
+    margin-top: 24px;
+    margin-bottom: 24px;
+    background: rgba(255, 255, 255, 0.5);
+    border:1px solid #5c7da721;
+    border-radius: 0px;
+}
+
+
+
+a{
+    color:#2825299d
+
+}
+h1,h2{
+    line-height: 1.4;
+}
+.brand{
+    font-size:24px;
+    font-weight: bold;
+    text-decoration: none;
+
+}
+.meta,footer{
+    color:#526346;
+    font-size:14px;
+}
+
+
+ul{
+    list-style: none;
+    padding:0;
+}
+
+li{
+    padding:18px 0;
+    border-bottom:1px solid #dce4dc;
+
+}
+
+button, input, textarea{
+    padding: 5px 10px;
+    border:1px solid #fcfdfc28;
+    border-radius: 2px;
+}
+
+button{
+    background:#496d58;
+    color:white;
+    cursor: pointer;
+    transition:background-color 0.15s, transform 0.15s;
+}
+
+button:hover:not(:disabled){
+    background:#729680;
+}
+
+button:active:not(:disabled){
+    transform: scale(0.98);
+}
+
+button:disabled{
+    background: #d8ebe0;
+    color: black;
+    cursor: not-allowed;
+}
+input, textarea{
+    width:100%;
+    background: white;
+    color: #526346;
+
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap:16px;
+    background-image: url('images/leaf.svg');
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+header>a {
+    margin-right: auto;
+}
+nav, .meta, .pagination{
+    display: flex;
+    align-items: center;
+    gap:16px;
+
+}
+
+.pagination{
+    justify-content: center;
+    margin-top:24px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap:12px;
+}
+
+#post-content #comment-list p{
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+
+}
+
+.post-list a{
+    overflow-wrap:anywhere;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+nav > a {
+    text-decoration: none;
+    
+}
+
+form input:focus, form textarea:focus{
+    border-color: #3fa3a0;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+@media(max-width:600px){
+    header,main, footer{
+        padding: 16px;
+
+    }
+    nav{
+        flex-wrap: wrap;
+        gap:8px;
+    }
+    button[type="submit"]{
+        width: 100%;
+    }
+
+}
+
+article {
+    position: relative;
+}
+
+#menu-toggle {
+    position: absolute;
+    top: -15px;
+    right: 15px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+#menu-toggle[hidden] {
+    display: none;
+}
+
+.menu-box {
+    position: absolute;
+    top: 25px;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    padding: 5px;
+
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    z-index: 10;
+}
+
+.menu-box[hidden] {
+    display: none;
+}
+
+.menu-box button {
+    color: #243b2d;
+    padding: 8px;
+    border: none;
+    background: white;
+    text-align: left;
+    cursor: pointer;
+}
+
+.menu-box button:hover {
+    background: #f2f2f2;
+}
+
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* .comment-menu-btn {
+  margin-left: auto; /* 남는 공간을 왼쪽에 몰아줘서 버튼이 우측 끝으로 감 */
+  background: none;
+  border: none;
+  cursor: pointer;
+/* } */
+
+
+.comment-menu-btn {
+  margin-left: auto;
+  border: none;
+  cursor: pointer;
+}
+
+.comment-menu-btn,
+.comment-menu-btn:hover:not(:disabled),
+.comment-menu-btn:active:not(:disabled) {
+  all: unset;
+  margin-left: auto;
+  cursor: pointer;
+}

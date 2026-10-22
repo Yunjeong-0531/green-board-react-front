@@ -1,3 +1,3 @@
-export default function BoardFooter({boardName}){
-    return <footer>함께 배우고 기록하는 {boardName}입니다 </footer>;
+export default function BoardFooter(){
+    return <footer>함께 배우고 기록하는 Green게시판입니다 </footer>;
 }

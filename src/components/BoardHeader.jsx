@@ -2,7 +2,6 @@ import {Link} from "react-router-dom";
 
 export default function BoardHeader({isLoggedIn, onLogout }){
 
-  console.log(isLoggedIn);
 return(
     <header>
       <Link className="brand" to="/posts">Green 게시판</Link>

@@ -1,11 +1,14 @@
 import {Link} from "react-router-dom";
 
 
-export default function Login(){
+
+
+
+export default function Login({onLogin}){
     return <main>
         <h1>로그인</h1>
 
-        <form id="login-form">
+        <form id="login-form" onSubmit={(event)=>{event.preventDefault(); onLogin();} }>
             <label htmlFor="username">아이디</label>
             <input id="username" name="username" ></input>
             <label htmlFor="password">비밀번호</label>

@@ -4,7 +4,7 @@ export default function PostItem({post}){
     return(
     <li>
         <Link to={`/posts/${post.id}`}>{post.title}</Link>
-        <div className="meta">{post.authorNickname}|{post.createdDatetime}</div>
+        <div className="meta">{post.authorNickName}|{post.createdDateTime}</div>
     
     </li>
 )

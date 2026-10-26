@@ -18,7 +18,7 @@ export default function PostList({token}){
   }
   
   useEffect(()=>{
-    fetch(`http://127.0.0.1:8080/api/board?page=${page-1}&size=10`,
+    fetch(`http://127.0.0.1:8080/api/board?page=${page-1}&size=2`,
       {headers : {Authorization:`Bearer ${token}`}}
     )
     .then((response)=>response.json())

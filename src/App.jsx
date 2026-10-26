@@ -35,7 +35,7 @@ return(
     <Route path="/" element={token? <PostList token={token}/> :<Login onLogin={setToken}/>} />
     <Route path="/posts" element={token? <PostList token={token}/> :<Login onLogin={setToken}/>} />
     <Route path="/posts/new" element={<PostForm onSave={savePost}/>} />
-    <Route path="/posts/:postId" element={<PostDetail/>} />
+    <Route path="/posts/:postId" element={token? <PostDetail token={token}/> :<Login onLogin={setToken}/>}/>
     <Route path="/login" element={<Login onLogin={setToken}/>} />
   </Routes>
     <BoardFooter/>

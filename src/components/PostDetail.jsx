@@ -1,8 +1,8 @@
 import {Link, useParams} from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useAuthContext } from "../useAuthContext";
 
-
-export default function PostDetail({token}){
+export default function PostDetail(){
 
     const {postId} = useParams();
     //const post = posts.find((post)=>post.id ===Number(postId));
@@ -11,6 +11,7 @@ export default function PostDetail({token}){
     const [comments, setComments] = useState([]);
     const [postMessage, setPostMessage] = useState("");
     const [commentMessage, setCommentMessage] = useState("");
+      const {token} = useAuthContext();
     
     useEffect(()=>{
         if(Number(postId)<1) {
@@ -48,9 +49,10 @@ export default function PostDetail({token}){
                 }
                 setComments(result.data);
                 setCommentMessage("");
-            console.log(result)
+                console.log(result)
             }catch(error){
                 setCommentMessage(error.message);
+                
             }
         }
         loadDetail();
@@ -75,9 +77,9 @@ export default function PostDetail({token}){
             <p id="comments-message" role="status">{commentMessage}</p>
             <ul id="comments-list">
                 { comments.length===0?"등록된 댓글이 없습니다.":comments.map(
-                    (comment)=> <li key={comment.id}><strong>{comment.nickname}</strong><p>{comment.content}</p></li>)}
+                    (comment)=> <li key={comment.commentId}><strong>{comment.nickname}</strong><p>{comment.content}</p></li>)}
             </ul>
-            <form id="comment-form" onSubmit={()=>}>
+            <form id="comment-form">
                 <label htmlFor="comment-content">댓글 내용</label>
                 <textarea id="comment-content" name="content" required maxLength="255"></textarea>
                 <button type="submit">댓글 등록</button>

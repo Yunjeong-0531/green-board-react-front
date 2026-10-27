@@ -2,13 +2,14 @@ import {useSearchParams} from "react-router-dom";
 import PostItem from "./PostItem";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useAuthContext } from "../useAuthContext";
 
-
-export default function PostList({token}){
+export default function PostList(){
   const [searchParams, setSearchParams] = useSearchParams();
   const [posts, setPosts] = useState([]);
   const [totalPages, setTotalPages] = useState(0);
   const [message, setMessage] =useState("게시글 목록");
+  const {token} = useAuthContext();
 
   const requestedPage = Number(searchParams.get("page"));
   let page = 1;

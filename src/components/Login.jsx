@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../useAuthContext";
 
 
 
 
 
 
-export default function Login({onLogin}){
+export default function Login(){
+    const {login} = useAuthContext();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
@@ -26,9 +28,9 @@ export default function Login({onLogin}){
             if(!response.ok||!result.success){
                 throw new Error(result.message);
             }
-            localStorage.setItem("accessToken", result.data.accessToken)
-            onLogin(result.data.accessToken);
-            navigate("/posts")
+            login(result.data.accessToken);
+            console.log("로그인성공")
+            navigate("/posts");
         } catch (error){
             setMessage(error.message);
         }
